@@ -6,6 +6,8 @@ import java.util.Observer;
 
 import javax.swing.JPanel;
 
+import cell.Drawable;
+
 
 public class DrawingsPanel extends JPanel implements Observer{
 
@@ -14,9 +16,9 @@ public class DrawingsPanel extends JPanel implements Observer{
 	 * @author Carlo
 	 */
 	private static final long serialVersionUID = 1L;
-	private utils.ICellPrototype[][] matrix;
+	private Drawable[][] matrix;
 	
-	public void setMatrix(utils.ICellPrototype[][] matrix) {
+	public void setMatrix(Drawable[][] matrix) {
 		this.matrix = matrix;
 	}
 		

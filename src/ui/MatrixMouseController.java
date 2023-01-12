@@ -1,13 +1,14 @@
 package ui;
 
+import game.Minesweeper;
+import game.MinesweeperSettings;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JOptionPane;
 
-import utils.CellPrototype;
-import utils.ICellPrototype;
-import utils.MineMapBuilder;
+import cell.Drawable;
 
 public class MatrixMouseController implements MouseListener{
 		
@@ -20,23 +21,18 @@ public class MatrixMouseController implements MouseListener{
 		return mouseController;
 	}
 	
-	private ICellPrototype[][] cellMatrix;
-	private Integer[][] mineMatrix;
-	private MineMapBuilder mapBuilder;
-	private MinesweeperUi minesweeperUi;
-	private int openedCells = 0;
-	private int mineValue = 9;
+	private Drawable[][] cellMatrix;
+	private int[][] mineMapMatrix;
+	private Minesweeper minesweeperUi;
+	private MinesweeperSettings minesweeperSettings = MinesweeperSettings.getMinesweeperSettings();
 
-	public void setCellMatrix(ICellPrototype[][] cellMatrix) {
+	public void setCellMatrix(Drawable[][] cellMatrix) {
 		this.cellMatrix = cellMatrix;
 	}
-	public void setMineMatrix(Integer[][] mineMatrix) {
-		this.mineMatrix = mineMatrix;
+	public void setMineMapMatrix(int[][] mineMapMatrix) {
+		this.mineMapMatrix = mineMapMatrix;
 	}
-	public void setMapBuilder(MineMapBuilder mapBuilder) {
-		this.mapBuilder = mapBuilder;
-	}
-	public void setMinesweeperUi(MinesweeperUi minesweeperUi) {
+	public void setMinesweeperUi(Minesweeper minesweeperUi) {
 		this.minesweeperUi = minesweeperUi;
 	}
 	@Override
@@ -51,20 +47,17 @@ public class MatrixMouseController implements MouseListener{
 				isIn = cellMatrix[i][j].isIn(mouseX, mouseY, isIn, x, y);
 				if (isIn) {
 					minesweeperUi.update();
-					openedCells++;
 				}
-				if (mineMatrix[i][j] == mineValue && isIn) {
+				if (mineMapMatrix[i][j] == minesweeperSettings.getMineValue() && isIn) {
 					JOptionPane.showMessageDialog(null, "Hai perso!");					
 					try {
-						mapBuilder.createMineMap();
-						minesweeperUi.setMapBuilder(mapBuilder);
-						minesweeperUi.createUIMineCamp(new CellPrototype());
-						openedCells = 0;
+						minesweeperUi.createUIMineCamp();
 						minesweeperUi.update();
-					} catch (CloneNotSupportedException e1) { 
+					} catch (CloneNotSupportedException e1) {
 						e1.printStackTrace();
 					}
-				}else if (openedCells == mapBuilder.getCampHeight()*mapBuilder.getCampWidth()-2) {
+				}
+/*				else if (openedCells == mapBuilder.getCampHeight()*mapBuilder.getCampWidth()-2) {
 					JOptionPane.showMessageDialog(null, "Hai vinto!");					
 					try {
 						mapBuilder.createMineMap();
@@ -75,8 +68,9 @@ public class MatrixMouseController implements MouseListener{
 					} catch (CloneNotSupportedException e1) { 
 						e1.printStackTrace();
 					}
-				}
-			}}
+				}*/
+			}
+		}
 	}
 	@Override
 	public void mouseEntered(MouseEvent arg0) {

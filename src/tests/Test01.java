@@ -1,12 +1,16 @@
 package tests;
 
+import game.MineMapBuilder;
+import game.Minesweeper;
+import game.MinesweeperSettings;
+
 import javax.swing.JFrame;
+
+import cell.CellDirtyGraphics;
+import cell.CellPrototype;
 
 import ui.DrawingsPanel;
 import ui.MatrixMouseController;
-import ui.MinesweeperUi;
-import utils.CellPrototype;
-import utils.MineMapBuilder;
 
 
 
@@ -22,16 +26,18 @@ public class Test01 {
 
 		JFrame frame=new JFrame();
 		DrawingsPanel panel = new DrawingsPanel();
-		MineMapBuilder mapBuilder = new MineMapBuilder(5, 5, 2);
-		mapBuilder.createMineMap();
-		MinesweeperUi minesweeperUi = new MinesweeperUi(panel, mapBuilder);
-		minesweeperUi.createUIMineCamp(new CellPrototype());
+		
+		MineMapBuilder mineMapBuilder = new MineMapBuilder(10, 10, 30);
+		CellDirtyGraphics cellDirtyGraphics = new CellDirtyGraphics();
+		Minesweeper minesweeperUi = new Minesweeper(panel, mineMapBuilder, new CellPrototype(false, cellDirtyGraphics), cellDirtyGraphics);
+		minesweeperUi.createUIMineCamp();
+		MatrixMouseController matrixMouseController = MatrixMouseController.getMouseController();
+		matrixMouseController.setMinesweeperUi(minesweeperUi);
 		minesweeperUi.addObserver(panel);
-		MatrixMouseController.getMouseController().setMapBuilder(mapBuilder);
-		MatrixMouseController.getMouseController().setMinesweeperUi(minesweeperUi);
-		frame.addMouseListener(MatrixMouseController.getMouseController());
+		frame.addMouseListener(matrixMouseController);
 		frame.setTitle("FopenGUI");
-		frame.setSize(640,480);
+		frame.setSize(mineMapBuilder.getCampWidth()*MinesweeperSettings.getMinesweeperSettings().getCellWidth()+15, 
+				mineMapBuilder.getCampHeight()*MinesweeperSettings.getMinesweeperSettings().getCellHeight()+38);
 		frame.getContentPane().add(panel);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);

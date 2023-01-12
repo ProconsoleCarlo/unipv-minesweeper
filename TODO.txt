@@ -1,4 +1,3 @@
-1)Sistemare il metodo per decidere se si ha vinto(ora conta il numero di celle "vuote" cliccate fregandosene se sono già state aperte
-	(Magari fare uno "stato" della cella)
+1)Creare il metodo per stabilire quando si vince
 2)Implementare la cosiddetta bandierina col clic destro per segnalare una mina
 3)Se apro una cella con valore 0 (nessuna mina circostante) deve automaticamente aprire tutte le celle senza mine adiacenti

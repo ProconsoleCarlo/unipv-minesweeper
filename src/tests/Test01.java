@@ -2,9 +2,11 @@ package tests;
 
 import javax.swing.JFrame;
 
+import ui.DrawingsPanel;
 import ui.MatrixMouseController;
-import utils.CellaPrototype;
-import utils.IconMatrixBuilder;
+import ui.MinesweeperUi;
+import utils.CellPrototype;
+import utils.MineMapBuilder;
 
 
 
@@ -19,18 +21,19 @@ public class Test01 {
 	public static void main(String[] args) throws CloneNotSupportedException {
 
 		JFrame frame=new JFrame();
-		IconMatrixBuilder iconMatrixBuilder = new IconMatrixBuilder(10, 10, 20);
-		iconMatrixBuilder.createMineCamp(new CellaPrototype());
-		MatrixMouseController mouseController = MatrixMouseController.getMouseController();
-		mouseController.setIconMatrixBuilder(iconMatrixBuilder);
-//		UIMenuBar uiMenuBar = new UIMenuBar(iconMatrixBuilder);	
-//		frame.setJMenuBar(uiMenuBar.createMenuBar());
-		iconMatrixBuilder.addObserver(iconMatrixBuilder.getPanel());
-		frame.addMouseListener(mouseController);
+		DrawingsPanel panel = new DrawingsPanel();
+		MineMapBuilder mapBuilder = new MineMapBuilder(5, 5, 2);
+		mapBuilder.createMineMap();
+		MinesweeperUi minesweeperUi = new MinesweeperUi(panel, mapBuilder);
+		minesweeperUi.createUIMineCamp(new CellPrototype());
+		minesweeperUi.addObserver(panel);
+		MatrixMouseController.getMouseController().setMapBuilder(mapBuilder);
+		MatrixMouseController.getMouseController().setMinesweeperUi(minesweeperUi);
+		frame.addMouseListener(MatrixMouseController.getMouseController());
 		frame.setTitle("FopenGUI");
 		frame.setSize(640,480);
+		frame.getContentPane().add(panel);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().add(iconMatrixBuilder.getPanel());
 		frame.setVisible(true);
 
 	}

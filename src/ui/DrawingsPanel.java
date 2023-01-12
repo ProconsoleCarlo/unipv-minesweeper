@@ -1,4 +1,4 @@
-package utils;
+package ui;
 
 import java.awt.Graphics;
 import java.util.Observable;
@@ -14,9 +14,9 @@ public class DrawingsPanel extends JPanel implements Observer{
 	 * @author Carlo
 	 */
 	private static final long serialVersionUID = 1L;
-	private ICellaPrototype[][] matrix;
+	private utils.ICellPrototype[][] matrix;
 	
-	public void setMatrix(ICellaPrototype[][] matrix) {
+	public void setMatrix(utils.ICellPrototype[][] matrix) {
 		this.matrix = matrix;
 	}
 		

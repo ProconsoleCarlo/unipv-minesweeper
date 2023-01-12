@@ -3,8 +3,11 @@ package ui;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import utils.ICellaPrototype;
-import utils.IconMatrixBuilder;
+import javax.swing.JOptionPane;
+
+import utils.CellPrototype;
+import utils.ICellPrototype;
+import utils.MineMapBuilder;
 
 public class MatrixMouseController implements MouseListener{
 		
@@ -17,28 +20,25 @@ public class MatrixMouseController implements MouseListener{
 		return mouseController;
 	}
 	
-	private ICellaPrototype[][] cellMatrix;
+	private ICellPrototype[][] cellMatrix;
 	private Integer[][] mineMatrix;
-	private IconMatrixBuilder iconMatrixBuilder;
-	public void setIconMatrixBuilder(IconMatrixBuilder iconMatrixBuilder) {
-		this.iconMatrixBuilder = iconMatrixBuilder;
-	}
-//	private ICellaPrototype<DrawableIcon> drawables = new ArrayList<DrawableIcon>();
-//	private DrawableIcon selectedIcon = null;	
-	public void setCellMatrix(ICellaPrototype[][] cellMatrix) {
+	private MineMapBuilder mapBuilder;
+	private MinesweeperUi minesweeperUi;
+	private int openedCells = 0;
+	private int mineValue = 9;
+
+	public void setCellMatrix(ICellPrototype[][] cellMatrix) {
 		this.cellMatrix = cellMatrix;
 	}
 	public void setMineMatrix(Integer[][] mineMatrix) {
 		this.mineMatrix = mineMatrix;
 	}
-	
-/*	public void addDrawable(DrawableIcon drawable){
-		drawables.add(drawable);
-	}*/
-//	private FileSystemBuilder builder;
-/*	public void setBuilder(FileSystemBuilder builder) {
-		this.builder = builder;
-	}*/	
+	public void setMapBuilder(MineMapBuilder mapBuilder) {
+		this.mapBuilder = mapBuilder;
+	}
+	public void setMinesweeperUi(MinesweeperUi minesweeperUi) {
+		this.minesweeperUi = minesweeperUi;
+	}
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		int mouseX = e.getX();
@@ -46,29 +46,37 @@ public class MatrixMouseController implements MouseListener{
 		for (int i = 0; i < cellMatrix.length; i++) {
 			for (int j = 0; j < cellMatrix[i].length; j++) {
 				boolean isIn = false;
-				int x = cellMatrix[i][j].getX()*20;
-				int y = cellMatrix[i][j].getY()*20;
+				int x = 20*i+10;
+				int y = 20*j+30;
 				isIn = cellMatrix[i][j].isIn(mouseX, mouseY, isIn, x, y);
-//				System.out.println(x+","+y+" mouse "+mouseX+","+mouseY+"isIn"+isIn);
 				if (isIn) {
-					
-					cellMatrix[i][j].setContents(mineMatrix[i][j]);
-					cellMatrix[i][j].showContents();
-					iconMatrixBuilder.update();
+					minesweeperUi.update();
+					openedCells++;
+				}
+				if (mineMatrix[i][j] == mineValue && isIn) {
+					JOptionPane.showMessageDialog(null, "Hai perso!");					
+					try {
+						mapBuilder.createMineMap();
+						minesweeperUi.setMapBuilder(mapBuilder);
+						minesweeperUi.createUIMineCamp(new CellPrototype());
+						openedCells = 0;
+						minesweeperUi.update();
+					} catch (CloneNotSupportedException e1) { 
+						e1.printStackTrace();
+					}
+				}else if (openedCells == mapBuilder.getCampHeight()*mapBuilder.getCampWidth()-2) {
+					JOptionPane.showMessageDialog(null, "Hai vinto!");					
+					try {
+						mapBuilder.createMineMap();
+						minesweeperUi.setMapBuilder(mapBuilder);
+						minesweeperUi.createUIMineCamp(new CellPrototype());
+						openedCells = 0;
+						minesweeperUi.update();
+					} catch (CloneNotSupportedException e1) { 
+						e1.printStackTrace();
+					}
 				}
 			}}
-/*			DrawableIcon icon = drawables.get(i);
-			boolean isIn = false;
-			int x = 0, y = 0;
-			x = icon.getX();
-			y = icon.getY();
-			isIn = icon.isIn(mouseX, mouseY, isIn, x, y);
-			if (isIn) {
-				selectedIcon = icon;
-				selectedIcon.executeAction(builder);
-			}
-		}*/
-//		builder.update();
 	}
 	@Override
 	public void mouseEntered(MouseEvent arg0) {

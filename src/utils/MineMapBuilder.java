@@ -1,46 +1,41 @@
 package utils;
 
-import java.awt.Color;
-import java.util.Observable;
 import java.util.Random;
 
 import ui.MatrixMouseController;
 
-public class IconMatrixBuilder extends Observable{
+public class MineMapBuilder{
 
-	private DrawingsPanel panel = new DrawingsPanel();
 	private int campWidth;
 	private int campHeight;
 	private int nMine;
-	private MatrixMouseController mouseController = MatrixMouseController.getMouseController();
-	
-	public IconMatrixBuilder(int campWidth, int campHeight, int nMine) {
+	private Integer[][] mineMatrix;
+	/**
+	 * Il costruttore della mappa delle mine e degli indicatori di mine vicine
+	 * @param campWidth	La larghezza del campo minato
+	 * @param campHeight L'altezza del campo minato
+	 * @param nMine	Il numero di mine del campo
+	 */
+	public MineMapBuilder(int campWidth, int campHeight, int nMine) {
 		super();
 		this.campWidth = campWidth;
 		this.campHeight = campHeight;
 		this.nMine = nMine;
 	}
-	public DrawingsPanel getPanel() {
-		return panel;
+	public int getCampWidth() {
+		return campWidth;
 	}
-	public void setCampWidth(int campWidth) {
-		this.campWidth = campWidth;
+	public int getCampHeight() {
+		return campHeight;
 	}
-	public void setCampHeight(int campHeight) {
-		this.campHeight = campHeight;
+	public Integer[][] getMineMatrix() {
+		return mineMatrix;
 	}
-	public void createMineCamp(ICellaPrototype cellaPrototype) throws CloneNotSupportedException {
-		ICellaPrototype[][] campoMinato = new ICellaPrototype[campWidth][campHeight];
-		for (int i = 0; i < campWidth; i++) {
-			for (int j = 0; j < campHeight; j++) {
-				ICellaPrototype cella = cellaPrototype.clone();
-				cella.setX(i);
-				cella.setY(j);
-				cella.setColor(Color.red);
-				campoMinato[i][j] = cella;
-			}
-		}
-		Integer[][] mineMatrix = new Integer[campWidth][campHeight];
+	/**
+	 * Crea la mappa delle mine e degli indicatori del numero di mine vicine
+	 */
+	public void createMineMap(){
+		mineMatrix = new Integer[campWidth][campHeight];
 		for (int i = 0; i < mineMatrix.length; i++) {
 			for (int j = 0; j < mineMatrix[i].length; j++) {
 				mineMatrix[i][j] = 0;
@@ -48,20 +43,15 @@ public class IconMatrixBuilder extends Observable{
 		}
 		setMines(mineMatrix);
 		setHints(mineMatrix);
-		
-		for (int i = 0; i < mineMatrix.length; i++) {
+		MatrixMouseController.getMouseController().setMineMatrix(mineMatrix);
+		//See mineMap representation
+/*		for (int i = 0; i < mineMatrix.length; i++) {
 			String line = "";
 			for (int j = 0; j < mineMatrix[i].length; j++) {
 				line = line+String.valueOf(mineMatrix[i][j])+" ";
 			}
 			System.out.println(line);
-		}
-//		setMines(campoMinato);
-//		setHints(campoMinato);
-		panel.setMatrix(campoMinato);
-		mouseController.setCellMatrix(campoMinato);
-		mouseController.setMineMatrix(mineMatrix);
-		update();
+		}*/
 	}
 	private void setMines(Integer[][] mineMatrix){
 		Random random = new Random();
@@ -100,9 +90,4 @@ public class IconMatrixBuilder extends Observable{
 			}
 		}
 	}
-	public void update() {
-		setChanged();
-		notifyObservers();
-	}
-	
 }

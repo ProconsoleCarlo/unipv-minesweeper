@@ -1,39 +1,39 @@
 package game;
 
 import java.util.Random;
-
+/**
+ * La classe che costruisce la matrice numerica del campo minato
+ * @author Carlo
+ *
+ */
 public class MineMapBuilder{
 
 	private int campWidth;
 	private int campHeight;
-	private int nMine;
+	private int mineNumber;
 	private int[][] mineMatrix;
 	private MinesweeperSettings minesweeperSettings = MinesweeperSettings.getMinesweeperSettings();
 	/**
 	 * Il costruttore della mappa delle mine e degli indicatori di mine vicine
 	 * @param campWidth	La larghezza del campo minato
 	 * @param campHeight L'altezza del campo minato
-	 * @param nMine	Il numero di mine del campo
+	 * @param mineNumber	Il numero di mine del campo
 	 */
-	public MineMapBuilder(int campWidth, int campHeight, int nMine) {
+	public MineMapBuilder(int campWidth, int campHeight, int mineNumber) {
 		super();
 		this.campWidth = campWidth;
 		this.campHeight = campHeight;
-		this.nMine = nMine;
+		this.mineNumber = mineNumber;
 	}
-	public int getCampWidth() {
-		return campWidth;
-	}
-	public int getCampHeight() {
-		return campHeight;
-	}
-	public int[][] getMineMatrix() {
-		return mineMatrix;
+	public void setMatrixSettings(int campWidth, int campHeight, int mineNumber){
+		this.campWidth = campWidth;
+		this.campHeight = campHeight;
+		this.mineNumber = mineNumber;
 	}
 	/**
 	 * Crea la mappa delle mine e degli indicatori del numero di mine vicine
 	 */
-	public void createMineMap(){
+	public int[][] createMineMap(){
 		mineMatrix = new int[campWidth][campHeight];
 		for (int i = 0; i < mineMatrix.length; i++) {
 			for (int j = 0; j < mineMatrix[i].length; j++) {
@@ -42,11 +42,12 @@ public class MineMapBuilder{
 		}
 		setMines(mineMatrix);
 		setHints(mineMatrix);
+		return mineMatrix;
 	}
 	private void setMines(int[][] mineMatrix){
 		Random random = new Random();
 		int minePosate = 0;
-		while (minePosate<nMine) {
+		while (minePosate<mineNumber) {
 			if (mineMatrix[random.nextInt(campWidth)][random.nextInt(campHeight)] != minesweeperSettings.getMineValue()) {
 				mineMatrix[random.nextInt(campWidth)][random.nextInt(campHeight)] = minesweeperSettings.getMineValue();
 				minePosate++;

@@ -1,3 +1,5 @@
-1)Creare il metodo per stabilire quando si vince
-2)Implementare la cosiddetta bandierina col clic destro per segnalare una mina
+1)Creare il metodo per stabilire quando si vince DONE!!
+2)Implementare la cosiddetta bandierina col clic destro per segnalare una mina DONE!!
 3)Se apro una cella con valore 0 (nessuna mina circostante) deve automaticamente aprire tutte le celle senza mine adiacenti
+	PARZIALMENTE DONE! (APRE SOLO GRUPPI DI NON MINE DI 3x3)
+4)Impostare il menu per il cambiamento di tipo di grafica

@@ -4,16 +4,25 @@ import game.MinesweeperSettings;
 
 import java.awt.Graphics;
 
-
+/**
+ * Una cella del campo minato
+ * Implementa una logica a tre valori per il suo stato:
+ * 0 = chiusa
+ * 1 = segnalata
+ * 2 = aperta
+ * @author Carlo
+ *
+ */
 public class DrawingCell implements Drawable {
 
-	private boolean opened;
+	private int status;
 	private int x, y;
+	private int cellValue;
 	private ICellGraphics cellGraphics;
 	private MinesweeperSettings minesweeperSettings = MinesweeperSettings.getMinesweeperSettings();
-	public DrawingCell(boolean opened, ICellGraphics cellGraphics) {
+	public DrawingCell(int status, ICellGraphics cellGraphics) {
 		super();
-		this.opened = opened;
+		this.status = status;
 		this.cellGraphics = cellGraphics;
 		
 	}
@@ -21,28 +30,44 @@ public class DrawingCell implements Drawable {
 		return cellGraphics;
 	}
 	@Override
-	public void setPosition(int x, int y) {
+	public void setCellSettings(int x, int y, int cellValue) {
 		this.x = x;
-		this.y = y;		
+		this.y = y;
+		this.cellValue = cellValue;
 	}
 	@Override
-	public int[] getPosition() {
-		int[] position = new int[2];
-		position[0] = x;
-		position[1] = y;
-		return position;
+	public int getCellValue() {
+		return cellValue;
 	}
 	@Override
-	public boolean isIn(int mouseX, int mouseY, boolean isIn, int x, int y) {
-		if(mouseX>x && mouseX<x+minesweeperSettings.getCellWidth() && mouseY>y && mouseY<y+minesweeperSettings.getCellHeight()){
-			opened = true;
-			return true;
+	public void setCellStatus(int status) {
+		this.status = status;
+	}
+	@Override
+	public int getCellStatus() {
+		return status;
+	}
+	@Override
+	public boolean isIn(int mouseButton, int mouseX, int mouseY, int x, int y) {
+		if (status != 2) {
+			if(mouseX>x && mouseX<x+minesweeperSettings.getCellWidth() && mouseY>y && mouseY<y+minesweeperSettings.getCellHeight()){
+				if (mouseButton == 1 && status != 1) {
+					status = 2;
+				}else if (mouseButton == 1 && status == 1) {
+					status = 0;
+				}else if (mouseButton == 3) {
+					status = 1;
+				}
+				return true;
+			}else {
+				return false;
+			}
 		}else {
 			return false;
 		}
 	}
 	@Override
 	public void draw(Graphics graphics) {
-		cellGraphics.draw(x, y, graphics, opened);
+		cellGraphics.draw(x, y, cellValue, graphics, status);
 	}
 }

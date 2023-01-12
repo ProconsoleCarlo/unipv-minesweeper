@@ -17,11 +17,9 @@ public class DrawingsPanel extends JPanel implements Observer{
 	 */
 	private static final long serialVersionUID = 1L;
 	private Drawable[][] matrix;
-	
 	public void setMatrix(Drawable[][] matrix) {
 		this.matrix = matrix;
 	}
-		
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -31,7 +29,6 @@ public class DrawingsPanel extends JPanel implements Observer{
 			}
 		}
 	}
-	
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		repaint();

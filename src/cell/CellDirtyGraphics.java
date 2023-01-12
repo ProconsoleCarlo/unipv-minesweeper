@@ -8,23 +8,16 @@ import java.awt.Graphics;
 
 public class CellDirtyGraphics implements ICellGraphics {
 
-	private MinesweeperSettings minesweeperSettings = MinesweeperSettings.getMinesweeperSettings();
-	private int[][] mineMatrix;
-	public CellDirtyGraphics() {
-		super();
-	}
-	public void setMineMatrix(int[][] mineMatrix) {
-		this.mineMatrix = mineMatrix;
-	}
+	private MinesweeperSettings settings = MinesweeperSettings.getMinesweeperSettings();
 
 	@Override
-	public void draw(int x, int y, Graphics graphics, boolean status) {
-		graphics.setColor(Color.black);
-		graphics.drawRect(minesweeperSettings.getCellWidth()*x, minesweeperSettings.getCellHeight()*y,
-				minesweeperSettings.getCellWidth(), minesweeperSettings.getCellHeight());
-		if (status) {
-			graphics.drawString(String.valueOf(mineMatrix[x][y]), x*minesweeperSettings.getCellWidth(),
-					y*minesweeperSettings.getCellHeight()+minesweeperSettings.getCellHeight());
+	public void draw(int x, int y, int cellValue, Graphics graphics, int status) {
+		if (status == 2) {
+			graphics.setColor(Color.black);
+			graphics.drawRect(settings.getCellWidth()*x, settings.getCellHeight()*y,
+					settings.getCellWidth(), settings.getCellHeight());
+			graphics.drawString(String.valueOf(cellValue), x*settings.getCellWidth(),
+					y*settings.getCellHeight()+settings.getCellHeight());
 		}
 	}
 

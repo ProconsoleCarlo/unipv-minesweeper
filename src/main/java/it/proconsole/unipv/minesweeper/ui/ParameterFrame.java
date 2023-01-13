@@ -1,7 +1,7 @@
-package ui;
+package it.proconsole.unipv.minesweeper.ui;
 
-import game.Minesweeper;
-import game.MinesweeperSettings;
+import it.proconsole.unipv.minesweeper.game.Minesweeper;
+import it.proconsole.unipv.minesweeper.game.MinesweeperSettings;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -12,8 +12,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import utils.OnlyNumberDocument;
-import utils.RestrictedContentsField;
+import it.proconsole.unipv.minesweeper.utils.OnlyNumberDocument;
+import it.proconsole.unipv.minesweeper.utils.RestrictedContentsField;
 /**
  * Il frame contenente i parametri del campo minato
  * @author Carlo

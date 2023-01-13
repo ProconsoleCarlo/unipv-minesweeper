@@ -1,4 +1,4 @@
-package game;
+package it.proconsole.unipv.minesweeper.game;
 
 
 import java.awt.event.MouseEvent;
@@ -6,7 +6,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JOptionPane;
 
-import cell.Drawable;
+import it.proconsole.unipv.minesweeper.cell.Drawable;
 
 /**
  * La classe che controlla le azioni del mouse

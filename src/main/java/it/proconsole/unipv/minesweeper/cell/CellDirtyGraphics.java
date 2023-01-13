@@ -1,6 +1,6 @@
-package cell;
+package it.proconsole.unipv.minesweeper.cell;
 
-import game.MinesweeperSettings;
+import it.proconsole.unipv.minesweeper.game.MinesweeperSettings;
 
 import java.awt.Color;
 import java.awt.Graphics;

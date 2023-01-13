@@ -1,4 +1,4 @@
-package game;
+package it.proconsole.unipv.minesweeper.game;
 
 import java.util.Random;
 /**

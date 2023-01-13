@@ -1,4 +1,4 @@
-package ui;
+package it.proconsole.unipv.minesweeper.ui;
 
 import java.awt.Graphics;
 import java.util.Observable;
@@ -6,7 +6,7 @@ import java.util.Observer;
 
 import javax.swing.JPanel;
 
-import cell.Drawable;
+import it.proconsole.unipv.minesweeper.cell.Drawable;
 
 
 public class DrawingsPanel extends JPanel implements Observer{

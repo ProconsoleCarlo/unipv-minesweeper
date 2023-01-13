@@ -1,4 +1,4 @@
-package cell;
+package it.proconsole.unipv.minesweeper.cell;
 
 /**
  * Un generico prototipo di cella

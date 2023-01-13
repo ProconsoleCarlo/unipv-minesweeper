@@ -1,6 +1,6 @@
-package tests;
+package it.proconsole.unipv.minesweeper.tests;
 
-import game.MineMapBuilder;
+import it.proconsole.unipv.minesweeper.game.MineMapBuilder;
 
 
 

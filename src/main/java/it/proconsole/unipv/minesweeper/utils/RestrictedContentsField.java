@@ -1,4 +1,4 @@
-package utils;
+package it.proconsole.unipv.minesweeper.utils;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;

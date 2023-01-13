@@ -1,4 +1,4 @@
-package cell;
+package it.proconsole.unipv.minesweeper.cell;
 
 import java.awt.Graphics;
 

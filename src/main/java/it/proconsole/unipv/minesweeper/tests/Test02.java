@@ -1,9 +1,9 @@
-package tests;
+package it.proconsole.unipv.minesweeper.tests;
 
-import ui.MenuBar;
-import game.Minesweeper;
-import cell.CellColoredGraphics;
-import cell.CellPrototype;
+import it.proconsole.unipv.minesweeper.ui.MenuBar;
+import it.proconsole.unipv.minesweeper.game.Minesweeper;
+import it.proconsole.unipv.minesweeper.cell.CellColoredGraphics;
+import it.proconsole.unipv.minesweeper.cell.CellPrototype;
 
 
 

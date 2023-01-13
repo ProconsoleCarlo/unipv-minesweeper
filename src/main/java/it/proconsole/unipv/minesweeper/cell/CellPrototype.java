@@ -1,4 +1,4 @@
-package cell;
+package it.proconsole.unipv.minesweeper.cell;
 /**
  * Il prototipo di una cella del campo minato
  * @author Carlo

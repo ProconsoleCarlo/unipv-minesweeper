@@ -1,4 +1,4 @@
-package utils;
+package it.proconsole.unipv.minesweeper.utils;
 
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="true" nesting-relationships="true">  
-  <interface id="1" language="java" name="cell.Drawable" project="Esame campo minato V4" 
-    file="/Esame campo minato V4/src/cell/Drawable.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="1" language="java" name="main.java.it.proconsole.unipv.minesweeper.cell.Drawable" project="Esame campo minato V4"
+    file="/Esame campo minato V4/src/main.java.it.proconsole.unipv.minesweeper.cell/Drawable.java" binary="false" corner="BOTTOM_RIGHT">
     <position height="-1" width="-1" x="56" y="246"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -10,8 +10,8 @@
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </interface>  
-  <class id="2" language="java" name="cell.DrawingCell" project="Esame campo minato V4" 
-    file="/Esame campo minato V4/src/cell/DrawingCell.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="2" language="java" name="main.java.it.proconsole.unipv.minesweeper.cell.DrawingCell" project="Esame campo minato V4"
+    file="/Esame campo minato V4/src/main.java.it.proconsole.unipv.minesweeper.cell/DrawingCell.java" binary="false" corner="BOTTOM_RIGHT">
     <position height="-1" width="-1" x="53" y="342"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -19,8 +19,8 @@
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <interface id="3" language="java" name="cell.ICellPrototype" project="Esame campo minato V4" 
-    file="/Esame campo minato V4/src/cell/ICellPrototype.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="3" language="java" name="main.java.it.proconsole.unipv.minesweeper.cell.ICellPrototype" project="Esame campo minato V4"
+    file="/Esame campo minato V4/src/main.java.it.proconsole.unipv.minesweeper.cell/ICellPrototype.java" binary="false" corner="BOTTOM_RIGHT">
     <position height="-1" width="-1" x="203" y="247"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -28,8 +28,8 @@
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </interface>  
-  <class id="4" language="java" name="cell.CellPrototype" project="Esame campo minato V4" 
-    file="/Esame campo minato V4/src/cell/CellPrototype.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="4" language="java" name="main.java.it.proconsole.unipv.minesweeper.cell.CellPrototype" project="Esame campo minato V4"
+    file="/Esame campo minato V4/src/main.java.it.proconsole.unipv.minesweeper.cell/CellPrototype.java" binary="false" corner="BOTTOM_RIGHT">
     <position height="-1" width="-1" x="203" y="344"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -37,8 +37,8 @@
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <interface id="5" language="java" name="cell.ICellGraphics" project="Esame campo minato V4" 
-    file="/Esame campo minato V4/src/cell/ICellGraphics.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="5" language="java" name="main.java.it.proconsole.unipv.minesweeper.cell.ICellGraphics" project="Esame campo minato V4"
+    file="/Esame campo minato V4/src/main.java.it.proconsole.unipv.minesweeper.cell/ICellGraphics.java" binary="false" corner="BOTTOM_RIGHT">
     <position height="-1" width="-1" x="340" y="250"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -46,8 +46,8 @@
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </interface>  
-  <class id="6" language="java" name="cell.CellDirtyGraphics" project="Esame campo minato V4" 
-    file="/Esame campo minato V4/src/cell/CellDirtyGraphics.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="6" language="java" name="main.java.it.proconsole.unipv.minesweeper.cell.CellDirtyGraphics" project="Esame campo minato V4"
+    file="/Esame campo minato V4/src/main.java.it.proconsole.unipv.minesweeper.cell/CellDirtyGraphics.java" binary="false" corner="BOTTOM_RIGHT">
     <position height="53" width="122" x="291" y="320"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -55,8 +55,8 @@
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="cell.CellColoredGraphics" project="Esame campo minato V4" 
-    file="/Esame campo minato V4/src/cell/CellColoredGraphics.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="7" language="java" name="main.java.it.proconsole.unipv.minesweeper.cell.CellColoredGraphics" project="Esame campo minato V4"
+    file="/Esame campo minato V4/src/main.java.it.proconsole.unipv.minesweeper.cell/CellColoredGraphics.java" binary="false" corner="BOTTOM_RIGHT">
     <position height="53" width="140" x="447" y="324"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -64,8 +64,8 @@
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="game.Minesweeper" project="Esame campo minato V4" 
-    file="/Esame campo minato V4/src/game/Minesweeper.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="8" language="java" name="main.java.it.proconsole.unipv.minesweeper.game.Minesweeper" project="Esame campo minato V4"
+    file="/Esame campo minato V4/src/main.java.it.proconsole.unipv.minesweeper.game/Minesweeper.java" binary="false" corner="BOTTOM_RIGHT">
     <position height="-1" width="-1" x="201" y="52"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -73,8 +73,8 @@
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="ui.DrawingsPanel" project="Esame campo minato V4" 
-    file="/Esame campo minato V4/src/ui/DrawingsPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="9" language="java" name="main.java.it.proconsole.unipv.minesweeper.ui.DrawingsPanel" project="Esame campo minato V4"
+    file="/Esame campo minato V4/src/main.java.it.proconsole.unipv.minesweeper.ui/DrawingsPanel.java" binary="false" corner="BOTTOM_RIGHT">
     <position height="-1" width="-1" x="62" y="50"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -82,8 +82,8 @@
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="game.MineMapBuilder" project="Esame campo minato V4" 
-    file="/Esame campo minato V4/src/game/MineMapBuilder.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="10" language="java" name="main.java.it.proconsole.unipv.minesweeper.game.MineMapBuilder" project="Esame campo minato V4"
+    file="/Esame campo minato V4/src/main.java.it.proconsole.unipv.minesweeper.game/MineMapBuilder.java" binary="false" corner="BOTTOM_RIGHT">
     <position height="-1" width="-1" x="412" y="52"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -91,8 +91,8 @@
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="game.MatrixMouseController" project="Esame campo minato V4" 
-    file="/Esame campo minato V4/src/game/MatrixMouseController.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="11" language="java" name="main.java.it.proconsole.unipv.minesweeper.game.MatrixMouseController" project="Esame campo minato V4"
+    file="/Esame campo minato V4/src/main.java.it.proconsole.unipv.minesweeper.game/MatrixMouseController.java" binary="false" corner="BOTTOM_RIGHT">
     <position height="-1" width="-1" x="345" y="140"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -100,8 +100,8 @@
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="ui.MenuBar" project="Esame campo minato V4" 
-    file="/Esame campo minato V4/src/ui/MenuBar.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="12" language="java" name="main.java.it.proconsole.unipv.minesweeper.ui.MenuBar" project="Esame campo minato V4"
+    file="/Esame campo minato V4/src/main.java.it.proconsole.unipv.minesweeper.ui/MenuBar.java" binary="false" corner="BOTTOM_RIGHT">
     <position height="-1" width="-1" x="630" y="120"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -109,8 +109,8 @@
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="ui.ParameterFrame" project="Esame campo minato V4" 
-    file="/Esame campo minato V4/src/ui/ParameterFrame.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="13" language="java" name="main.java.it.proconsole.unipv.minesweeper.ui.ParameterFrame" project="Esame campo minato V4"
+    file="/Esame campo minato V4/src/main.java.it.proconsole.unipv.minesweeper.ui/ParameterFrame.java" binary="false" corner="BOTTOM_RIGHT">
     <position height="-1" width="-1" x="628" y="199"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -118,8 +118,8 @@
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="utils.OnlyNumberDocument" project="Esame campo minato V4" 
-    file="/Esame campo minato V4/src/utils/OnlyNumberDocument.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="14" language="java" name="main.java.it.proconsole.unipv.minesweeper.utils.OnlyNumberDocument" project="Esame campo minato V4"
+    file="/Esame campo minato V4/src/main.java.it.proconsole.unipv.minesweeper.utils/OnlyNumberDocument.java" binary="false" corner="BOTTOM_RIGHT">
     <position height="53" width="152" x="730" y="89"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -127,8 +127,8 @@
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="utils.RestrictedContentsField" project="Esame campo minato V4" 
-    file="/Esame campo minato V4/src/utils/RestrictedContentsField.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="15" language="java" name="main.java.it.proconsole.unipv.minesweeper.utils.RestrictedContentsField" project="Esame campo minato V4"
+    file="/Esame campo minato V4/src/main.java.it.proconsole.unipv.minesweeper.utils/RestrictedContentsField.java" binary="false" corner="BOTTOM_RIGHT">
     <position height="-1" width="-1" x="811" y="192"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -136,8 +136,8 @@
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="tests.Test02" project="Esame campo minato V4" 
-    file="/Esame campo minato V4/src/tests/Test02.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="16" language="java" name="main.java.it.proconsole.unipv.minesweeper.tests.Test02" project="Esame campo minato V4"
+    file="/Esame campo minato V4/src/main.java.it.proconsole.unipv.minesweeper.tests/Test02.java" binary="false" corner="BOTTOM_RIGHT">
     <position height="-1" width="-1" x="486" y="246"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      

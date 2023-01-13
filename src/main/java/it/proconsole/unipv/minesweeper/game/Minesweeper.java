@@ -1,12 +1,12 @@
-package game;
+package it.proconsole.unipv.minesweeper.game;
 
 import java.util.Observable;
 
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 
-import ui.DrawingsPanel;
-import cell.ICellPrototype;
+import it.proconsole.unipv.minesweeper.ui.DrawingsPanel;
+import it.proconsole.unipv.minesweeper.cell.ICellPrototype;
 /**
  * La classe che gestisce il gioco del campo minato
  * @author Carlo

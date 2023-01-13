@@ -1,4 +1,4 @@
-package game;
+package it.proconsole.unipv.minesweeper.game;
 /**
  * La classe che contiene tutti i settaggi del gioco del campo minato
  * @author Carlo

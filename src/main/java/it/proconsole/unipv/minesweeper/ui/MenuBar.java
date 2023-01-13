@@ -1,6 +1,6 @@
-package ui;
+package it.proconsole.unipv.minesweeper.ui;
 
-import game.Minesweeper;
+import it.proconsole.unipv.minesweeper.game.Minesweeper;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
